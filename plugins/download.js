@@ -11,7 +11,7 @@ let baseUrl;
 })();
 
 
-const yourName = "*Qҽҽɳ-乙azie-MD*";
+const yourName = "*DENETH-MD*";
 
 
 
