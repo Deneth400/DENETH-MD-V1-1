@@ -79,6 +79,8 @@ console.log(e)
 reply(e)
 }
 })
+
+//===============hiru========================
 cmd({
     pattern: "hirunews",
     alias: ["hiru","news1"],
