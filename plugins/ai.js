@@ -14,7 +14,7 @@ cmd({
         let data = await fetchJson(`https://chatgptforprabath-md.vercel.app/api/gptv1?q=${q}`);
 
         // Reply with the fetched data
-        reply(data.data);
+        reply(from,{ image: { url: `https://github.com/denethhansaka/DENETH-MD-Files/blob/main/Images/I%20am%20Connected.jpg?raw=true` }, caption: data });
     } catch (e) {
         console.log(e);
         reply(e.toString());
