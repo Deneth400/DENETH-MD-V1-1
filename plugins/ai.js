@@ -15,6 +15,8 @@ cmd({
 
         // Reply with the fetched data
         return reply('${data.data}')
+        }catch(e){
+        console.log(e)
         reply(`${e}`)
     }
 });
