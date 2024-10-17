@@ -1,4 +1,4 @@
-import fetch from 'node-fetch'
+const fetch from 'node-fetch'
 let handler = async (m, { conn, text, usedPrefix, command }) => {
     if (global.db.data.users[m.sender].premiumTime < 1) return conn.sendButtonDoc(m.chat, `𝐅𝐈𝐓𝐔𝐑 𝐈𝐍𝐈 𝐊𝐇𝐔𝐒𝐔𝐒 𝐏𝐑𝐄𝐌𝐈𝐔𝐌!!`, botdate, '𝐁𝐮𝐲 𝐏𝐫𝐞𝗺𝐢𝐮𝗺', '.sewabot', m, adReply)
 	if (!text) throw `uhm.. mau cari apa?\n\nContoh: ${usedPrefix + command} bokep🐒`
@@ -26,5 +26,3 @@ handler.tags = ["downloader", "premium"]
 handler.command = /^xnxx(s?earch)?$/i
 
 handler.register = true
-
-export default handler
