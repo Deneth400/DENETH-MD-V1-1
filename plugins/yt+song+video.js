@@ -42,7 +42,7 @@ await conn.sendMessage(from,{document: {url:downloadUrl},mimetype:"video/mp4",fi
   
 }catch(e){
 console.log(e)
-reply('${e}')
+reply(`${e}`)
 }
 })
 
