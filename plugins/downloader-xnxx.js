@@ -1,4 +1,4 @@
-import fetch from 'node-fetch'
+const fetch from 'node-fetch'
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
 	if (!text) throw `uhm.. mau download apa?\n\nContoh: ${usedPrefix + command} link xnxx`
