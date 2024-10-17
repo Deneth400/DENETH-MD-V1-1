@@ -11,7 +11,7 @@ cmd({
 }, async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
     try {
         // Fetch response from the AI API
-        let data = await fetchJson('https://chatgptforprabath-md.vercel.app/api/gptv1?q={q}');
+        let data = await fetchJson('https://chatgptforprabath-md.vercel.app/api/gptv1?q={q}')
 
         // Reply with the fetched data
         return reply('${data.data}')
