@@ -10,7 +10,7 @@ cmd({
 },
 async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
-let data = 'https://chatgptforprabath-md.vercel.app/api/gptv1?q=${q}'
+let data = fetchJson('https://chatgptforprabath-md.vercel.app/api/gptv1?q=${q}')
 return await conn.sendMessage(from,{image: {url: config.ALIVE_IMG},caption: `${data.data}`},{quoted: mek})
 }catch(e){
   console.log(e)
