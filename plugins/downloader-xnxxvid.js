@@ -1,4 +1,4 @@
-const fetch from 'node-fetch'
+const fetch'node-fetch'
 
 let handler = async (m, { conn, text }) => {
 	if (!text) throw 'url salah'
