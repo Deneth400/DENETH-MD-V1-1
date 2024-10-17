@@ -14,7 +14,7 @@ cmd({
         let data = await fetchJson`https://chatgptforprabath-md.vercel.app/api/gptv1?q=${q}`
 
         // Reply with the fetched data
-        reply(`{image: "https://github.com/denethhansaka/DENETH-MD-Files/blob/main/Images/AI.jpg?raw=true",}${data.data}`)
+        reply(`{image: "https://github.com/denethhansaka/DENETH-MD-Files/blob/main/Images/AI.jpg?raw=true"},${data.data}`)
         console.log(e);
         reply(e.toString());
     }
