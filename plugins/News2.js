@@ -22,7 +22,7 @@ cmd({
 async(conn, mek, m,{from, quoted, reply }) => {
 try{
 
-const news = await fetchJson('https://dark-yasiya-api-new.vercel.app/news/lankadeepa')
+const news = await fetchJson(`${apilink}/lankadeepa`)
   
 const msg = `
            🕵️‍♂️ DENETH-MD LANKADEEPA NEWS 🕵️‍♂️
@@ -60,7 +60,7 @@ cmd({
 async(conn, mek, m,{from, quoted, reply }) => {
 try{
 
-const news = await fetchJson('https://dark-yasiya-api-new.vercel.app/news/bbc')
+const news = await fetchJson(`${apilink}/bbc`)
   
 const msg = `
            ⛩ BBC NEWS ⛩
@@ -79,3 +79,101 @@ console.log(e)
 reply(e)
 }
 })
+cmd({
+    pattern: "hirunews",
+    alias: ["hiru","news1"],
+    react: "⭐",
+    desc: "",
+    category: "news",
+    use: '.hirunews',
+    filename: __filename
+},
+async(conn, mek, m,{from, quoted }) => {
+try{
+
+const news = await fetchJson(`${apilink}/hiru`)
+  
+const msg = `
+           ⭐ *HIRU NEWS DENETH-MD* ⭐
+
+       
+• *Title* - ${news.result.title}
+
+• *News* - ${news.result.desc}
+
+• *Link* - ${news.result.url}`
+
+
+await conn.sendMessage( from, { image: { url: news.result.image || '' }, caption: msg }, { quoted: mek })
+} catch (e) {
+console.log(e)
+reply(e)
+}
+})
+
+// ================================SIRASA NEWS========================================
+
+cmd({
+    pattern: "sirasanews",
+    alias: ["sirasa","news2"],
+    react: "🔺",
+    desc: "",
+    category: "news",
+    use: '.sirasa',
+    filename: __filename
+},
+async(conn, mek, m,{from, quoted }) => {
+try{
+
+const news = await fetchJson(`${apilink}/sirasa`)
+  
+const msg = `
+           🔺 *SIRASA NEWS DENETH-MD* 🔺
+
+       
+• *Title* - ${news.result.title}
+
+• *News* - ${news.result.desc}
+
+• *Link* - ${news.result.url} `
+
+
+await conn.sendMessage( from, { image: { url: news.result.image || '' }, caption: msg }, { quoted: mek })
+} catch (e) {
+console.log(e)
+reply(e)
+}
+})
+
+// ================================DERANA NEWS========================================
+
+cmd({
+    pattern: "derananews",
+    alias: ["derana","news3"],
+    react: "📑",
+    desc: "",
+    category: "news",
+    use: '.derana',
+    filename: __filename
+},
+async(conn, mek, m,{from, quoted }) => {
+try{
+
+const news = await fetchJson(`${apilink}/derana`)
+  
+const msg = `
+           📑 *DERANA NEWS DENETH-MD* 📑
+
+       
+• *Title* - ${news.result.title}
+
+• *News* - ${news.result.desc}
+
+• *Date* - ${news.result.date}
+
+• *Link* - ${news.result.url} `
+
+
+await conn.sendMessage( from, { image: { url: news.result.image || '' }, caption: msg }, { quoted: mek })
+} catch (e) {
+console.log(e)
