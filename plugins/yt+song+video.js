@@ -18,15 +18,15 @@ const data = search.videos[0];
 const url = data.url
 
 let desc = `
-DENETH-MD YOUTUBE VIDEO DL
+*DENETH-MD YOUTUBE VIDEO DOWNLOADER*
 
-title: ${data.title}
-description: ${data.description}
-time: ${data.timestamp}
-ago: ${data.ago}
-views: ${data.views}
+*Title*: ${data.title}
+*Description*: ${data.description}
+*Time*: ${data.timestamp}
+*Ago*: ${data.ago}
+*Views*: ${data.views}
 
-ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴇɴᴇᴛʜ-ᴍᴅ ʙʏ ᴅᴇɴᴇᴛʜ ʜᴀɴꜱᴀᴋᴀ ᴋᴇᴇʀᴛʜɪʀᴀᴛʜɴᴀ
+> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴇɴᴇᴛʜ-ᴍᴅ 
 `
 
 await conn.sendMessage(from,{image:{url: data.thumbnail},caption:desc},{quoted:mek});
@@ -62,15 +62,15 @@ const data = search.videos[0];
 const url = data.url
 
 let desc = `
-DENETH-MD YOUTUBE SONG DL
+*DENETH-MD YOUTUBE SONG DOWNLOADER*
 
-title: ${data.title}
-description: ${data.description}
-time: ${data.timestamp}
-ago: ${data.ago}
-views: ${data.views}
+*Title*: ${data.title}
+*Description*: ${data.description}
+*Time*: ${data.timestamp}
+*Ago*: ${data.ago}
+*Views*: ${data.views}
 
-ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴇɴᴇᴛʜ-ᴍᴅ ʙʏ ᴅᴇɴᴇᴛʜ ʜᴀɴꜱᴀᴋᴀ ᴋᴇᴇʀᴛʜɪʀᴀᴛʜɴᴀ
+> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴇɴᴇᴛʜ-ᴍᴅ 
 `
 
 await conn.sendMessage(from,{image:{url: data.thumbnail},caption:desc},{quoted:mek});
