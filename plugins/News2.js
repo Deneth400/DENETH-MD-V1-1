@@ -179,3 +179,6 @@ const msg = `
 await conn.sendMessage( from, { image: { url: news.result.image || '' }, caption: msg }, { quoted: mek })
 } catch (e) {
 console.log(e)
+reply(e)
+}
+})
