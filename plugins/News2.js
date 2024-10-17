@@ -22,7 +22,7 @@ cmd({
 async(conn, mek, m,{from, quoted, reply }) => {
 try{
 
-const news = await fetchJson({apilink}/lankadeepa)
+const news = await fetchJson(${apilink}/lankadeepa)
   
 const msg = `
            🕵️‍♂️ DENETH-MD LANKADEEPA NEWS 🕵️‍♂️
@@ -60,7 +60,7 @@ cmd({
 async(conn, mek, m,{from, quoted, reply }) => {
 try{
 
-const news = await fetchJson({apilink}/bbc)
+const news = await fetchJson(${apilink}/bbc)
   
 const msg = `
            ⛩ BBC NEWS ⛩
