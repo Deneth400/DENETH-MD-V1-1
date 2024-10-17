@@ -27,4 +27,3 @@ handler.tags = ["downloader"]
 handler.command = /^(xnxxdl|dlxnxx)$/i
 handler.register = true
 
-export default handler
