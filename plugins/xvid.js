@@ -11,8 +11,8 @@ cmd({
 async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
   let handler = async (m, { conn }) =>
-      let _fun = JSON.parse(fs.readFileSync('./json/xxx.json'))
-      let json = _fun[Math.floor(Math.random() * _fun.length)]
+      let fun = JSON.parse(fs.readFileSync('../json/xxx.json'))
+      let json = fun[Math.floor(Math.random() * fun.length)]
       let caption = `❏  *B O K E P*\n\n`
          caption += `${json.title}\n`
          caption += `🛡 Premium viral : 50k\n\n`
