@@ -1,4 +1,4 @@
-import fetch from 'node-fetch'
+const fetch from 'node-fetch'
 
 let handler = async (m, { conn, text }) => {
 	if (!text) throw 'url salah'
@@ -9,4 +9,3 @@ handler.command = /^(xnxxvid(io)?)$/i
 
 handler.limit = true
 
-export default handler
