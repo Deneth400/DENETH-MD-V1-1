@@ -12,6 +12,9 @@ try{
 const config = await readEnv();
 let menu = {
 main: '',
+anime: '',
+fun: '',
+useful: '',
 download: '',
 news: '',
 ai: '',
@@ -33,6 +36,10 @@ let madeMenu = `🥰*Hello ${pushname}*
 ${menu.download}
 •MAIN MENU🧾
 ${menu.main}
+•ANIME MENU👦
+${menu.anime}
+•FUN MENU🧾
+${menu.fun}
 •NEWS MENU🧾
 ${menu.news}
 •GROUP MENU🤝
