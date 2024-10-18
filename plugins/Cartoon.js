@@ -35,9 +35,9 @@ cmd({
         } else {
             message.reply("No cartoons found for the query.");
         }
-    } catch (error) {
-        console.error('Error fetching cartoons:', error);
-        message.reply('An error occurred while fetching cartoons.');
+    } catch (e) {
+        console.log(e);
+        reply(`${e}`);
     }
 });
 
@@ -47,8 +47,8 @@ async function downloadCartoon(url) {
         console.log(`Downloading cartoon from: ${url}`);
         // Add actual download logic here
         return "Download complete!";
-    } catch (error) {
-        console.error('Error downloading cartoon:', error);
-        throw new Error('Failed to download cartoon.');
+    } catch (e) {
+        console.log(e);
+        reply(`${e}`);
     }
 }
