@@ -14,7 +14,7 @@ cmd({
     filename: __filename
 }, async (message, match) => {
     const query = match[1] || 'ben10';  // Use provided query or fallback to 'ben10'
-    const url = https://dark-yasiya-api-new.vercel.app/search/ginisisila?text=${query}&page=1;
+    const url = `https://dark-yasiya-api-new.vercel.app/search/ginisisila?text=${query}&page=1`;
 
     try {
         // Search for cartoons using the API
@@ -25,7 +25,7 @@ cmd({
             const downloadUrl = cartoonData.url;  // Adjust based on API response structure
 
             // Provide a message or reaction indicating the cartoon was found
-            message.reply(Found cartoon: ${cartoonTitle}. Starting download...);
+            message.reply(`Found cartoon: ${cartoonTitle}. Starting download...`);
 
             // Download cartoon (replace with actual download logic)
             await downloadCartoon(downloadUrl);
@@ -44,7 +44,7 @@ cmd({
 // Placeholder function for downloading cartoon
 async function downloadCartoon(url) {
     try {
-        console.log(Downloading cartoon from: ${url});
+        console.log(`Downloading cartoon from: ${url}`);
         // Add actual download logic here
         return "Download complete!";
     } catch (error) {
