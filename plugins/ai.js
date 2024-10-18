@@ -20,7 +20,7 @@ cmd({
             reply(`${e}`)
     }
 });
-smd(
+cmd(
     {
       pattern: "rmbg",
       alias: ["removebg"],
