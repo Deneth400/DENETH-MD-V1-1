@@ -13,39 +13,38 @@ let baseUrl;
 })();
 
 //mediafire
-cmd({
-            pattern: "mediafire",
-            alias: ["mf","මීඩියාෆයර්","mfire"],
-            desc: "Downloads zip from Mediafire.",
-            category: "downloader",
-            react: "⬇️",
-            filename: __filename,
-            use: '<url of mediafire>',
-        },
-        async(Void, citel, text) => {
-            if (!text) return citel.reply(`Give link ${tlang().greet}`);
-            if (!isUrl(text.split(" ")[0]) && !text.split(" ")[0].includes("mediafire.com")) return reply(`The link you provided is invalid`);
-            const baby1 = await mediafire(text);
-            if (baby1[0].size.split("MB")[0] >= 999) return reply("*File Over Limit* " + util.format(baby1));
-            const result4 = `*Mᴇᴅɪᴀғɪʀᴇ Dᴏᴡɴʟᴏᴀᴅᴇʀ*
-*Nᴀᴍᴇ* : ${baby1[0].nama}
-*Sɪᴢᴇ* : ${baby1[0].size}
-*Mɪᴍᴇ* : ${baby1[0].mime}
-*Lɪɴᴋ* : ${baby1[0].link}`;
-            reply(`${result4}`);
-            return Void.sendMessage(citel.chat, {
-                    document: {
-                        url: baby1[0].link,
-                    },
-                    fileName: baby1[0].nama,
-                    mimetype: baby1[0].mime,
-                }, {
-                    quoted: citel,
-                })
-                .catch((err) => reply("could not found anything"));
+AMDI({ cmd: ["mediafire", "mf", "mfire"], desc: Lang.MEDIAFIRE_DESC, type: "download", react: "🔥" }, (async (amdiWA) => {
+    let { footerTXT, input, react, reply, sendDocument } = amdiWA.msgLayout;
 
-        }
-    )
+    if (!input || !input.startsWith('https://www.mediafire.com/')) return await reply(Lang.NEED_MEDIAFIRE, "❓");
+
+    try {
+        await react("⬇️");
+        const mfAPI = await blackamda_API("mediafire", `url=${input}`, amdiWA.botNumberJid);
+        const response = await axios.get(mfAPI);
+        const json = response.data
+
+        if (json.status.error) return await reply("Error".fetchError([{ message: json.status.message }]), "❌", 1);
+        if (json.size.isLarge) return await reply(Lang.OVER_WA_FILE);
+
+        const caption = `${Lang.MF_TITLE}
+
+    📁 File name: ${json.name}
+    🎚️ Size: ${json.size}
+    🆙 Uploaded At: ${json.uploadedAt}
+    
+${footerTXT}`
+
+        await react("⬆️");
+        await sendDocument({ url: json.dl_link }, { mimetype: json.mime, fileName: json.name, caption: caption, quoted: true })
+            .then(async () => {
+                return await react("✔️");
+            });
+    } catch (e) {
+        console.log(e);
+        return await reply("Error".fetchError(e), "❌", 1);
+    }
+}));
 //fb downloader
 cmd({
     pattern: "fb",
