@@ -33,7 +33,7 @@ async (conn, mek, m, { from, q, reply }) => {
 💨 *Wind Speed*: ${data.wind.speed} m/s
 🔽 *Pressure*: ${data.main.pressure} hPa
 
-> Powered by DENETH-MD 🌦️
+Powered by OpenWeatherMap 🌦️
 `;
 
         return reply(weather);
