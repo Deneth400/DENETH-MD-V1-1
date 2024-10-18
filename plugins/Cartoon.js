@@ -33,10 +33,10 @@ cmd({
             // Send success reaction/message
             message.react("✅");
         } else {
-            message.reply("No cartoons found for the query.");
+            reply("No cartoons found for the query.");
         }
     } catch (error) {
-        console.error('Error fetching cartoons:', error);
+        console.log('Error fetching cartoons:', error);
         reply('An error occurred while fetching cartoons.');
     }
 });
