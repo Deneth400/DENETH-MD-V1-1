@@ -4,7 +4,7 @@ const { cmd } = require('../command');
 cmd({
     pattern: "gpass",
     desc: "Generate a strong password.",
-    category: "utility",
+    category: "convert",
     react: "🔐",
     filename: __filename
 },
