@@ -13,38 +13,56 @@ let baseUrl;
 })();
 
 //mediafire
-cmd({ cmd: ["mediafire", "mf", "mfire"], desc: Lang.MEDIAFIRE_DESC, type: "download", react: "🔥" }, (async (amdiWA) => {
-    let { footerTXT, input, react, reply, sendDocument } = amdiWA.msgLayout;
+cmd({
+            name: "mediafire",
+            react: "📑",
+            need: "url",
+            category: "download",
+            desc: "Download files from www.mediafire.com",
+            filename: __filename
+     },
+     async (anyaV2, pika, { args, prefix, command }) => {
+        if (args.length < 1) return pika.reply(`*${Config.themeemoji}Example:* ${prefix + command} https://www.mediafire.com/file/5mt5qtr7nv4igt7/TmWhatsApp_v2.1_-_Stock.apk/file`);
+        if (!/www.mediafire.com/.test(args.join(" "))) return pika.reply("_❎ Invalid Url_");
+        const {key} = await pika.keyMsg(Config.message.wait);
+        mediafiredl(args[0])
+        .then(async res=> {
+            const uploadDate = formatDate(res.aploud);
+            await anyaV2.sendMessage(pika.chat, {
+                    document: { url: res.url },
+                    caption: `
+❒   ✦ 𝙈𝙀𝘿𝙄𝘼𝙁𝙄𝙍𝙀 ✦   ❒
 
-    if (!input || !input.startsWith('https://www.mediafire.com/')) return await reply(Lang.NEED_MEDIAFIRE, "❓");
+▢ *Name:* ${res.filename}
+▢ *Type:* ${res.filetype}
+▢ *Extension:* ${res.ext}
+▢ *Size:* ${res.filesize}
+▢ *Uploaded On:* ${uploadDate.date} _at_ ${uploadDate.time}
 
-    try {
-        await react("⬇️");
-        const mfAPI = await blackamda_API("mediafire", `url=${input}`, amdiWA.botNumberJid);
-        const response = await axios.get(mfAPI);
-        const json = response.data
-
-        if (json.status.error) return await reply("Error".fetchError([{ message: json.status.message }]), "❌", 1);
-        if (json.size.isLarge) return await reply(Lang.OVER_WA_FILE);
-
-        const caption = `${Lang.MF_TITLE}
-
-    📁 File name: ${json.name}
-    🎚️ Size: ${json.size}
-    🆙 Uploaded At: ${json.uploadedAt}
-    
-${footerTXT}`
-
-        await react("⬆️");
-        await sendDocument({ url: json.dl_link }, { mimetype: json.mime, fileName: json.name, caption: caption, quoted: true })
-            .then(async () => {
-                return await react("✔️");
-            });
-    } catch (e) {
-        console.log(e);
-        return await reply("Error".fetchError(e), "❌", 1);
-    }
-}));
+> ${Config.footer}
+`.trim(),
+                    fileName: res.filename,
+                    mimetype: res.filetype,
+                    contextInfo: {
+                        externalAdReply: {
+                            title: "𝗠𝗘𝗗𝗜𝗔𝗙𝗜𝗥𝗘 𝗗𝗟 𝗘𝗡𝗚𝗜𝗡𝗘",
+                            body: "Owner: " + Config.ownername,
+                           // thumbnail: await getBuffer(""),
+                            showAdAttribution: false,
+                            thumbnailUrl: "https://i.ibb.co/wz43WhM/41-Sk-Snee-W-L.png",
+                            mediaType: 1,
+                            renderLargerThumbnail: true
+                        }
+                    }
+            }, {quoted:pika})
+            .then(()=> pika.deleteMsg(key));
+        })
+        .catch(err=> {
+            console.error(err);
+            pika.edit("ERROR: " + err.message, key);
+        });
+     }
+)
 //fb downloader
 cmd({
     pattern: "fb",
