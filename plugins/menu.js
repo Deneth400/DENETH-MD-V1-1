@@ -14,6 +14,7 @@ let menu = {
 main: '',
 download: '',
 news: '',
+ai: '',
 group: '',
 owner: '',
 convert: '',
@@ -35,6 +36,8 @@ ${menu.main}
 •NEWS MENU🧾
 ${menu.news}
 •GROUP MENU🤝
+${menu.group}
+•AI MENU🖤
 ${menu.group}
 •OWNER MENU⚒
 ${menu.owner}
