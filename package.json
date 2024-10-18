@@ -28,7 +28,7 @@
     "mongoose":"8.7.1",
     "secktor-pack": "latest",
     "ytdl-secktor": "latest",
-    "google-tts-api": "^2.0.2",
+    "google-tts-api": "^2.0.2"
                        
      },
      "directories": {
