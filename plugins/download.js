@@ -97,7 +97,7 @@ async(conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, send
         //fetch data from api  
         let data = await fetchJson(`${baseUrl}/api/mediafiredl?url=${q}`)
         reply("*🧚Downloading...*")
-        await conn.sendMessage(from, { document: { url: data.data.link_1 }, fileName: data.data.name, mimetype: data.data.file_type, caption: cap }, { quoted: mek })                                                                                                                 
+        await conn.sendMessage(from, { document: { url: data.data.download }, fileName: data.data.name, mimetype: data.data.file_type, caption: cap }, { quoted: mek })                                                                                                                 
     } catch (e) {
         console.log(e)
         reply(`${e}`)
