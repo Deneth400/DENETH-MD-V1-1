@@ -25,7 +25,7 @@ cmd({
             const downloadUrl = cartoonData.url;  // Adjust based on API response structure
 
             // Provide a message or reaction indicating the cartoon was found
-            message.reply(`Found cartoon: ${cartoonTitle}. Starting download...`);
+            reply(`Found cartoon: ${cartoonTitle}. Starting download...`);
 
             // Download cartoon (replace with actual download logic)
             await downloadCartoon(downloadUrl);
@@ -37,7 +37,7 @@ cmd({
         }
     } catch (error) {
         console.error('Error fetching cartoons:', error);
-        message.reply('An error occurred while fetching cartoons.');
+        reply('An error occurred while fetching cartoons.');
     }
 });
 
@@ -48,7 +48,7 @@ async function downloadCartoon(url) {
         // Add actual download logic here
         return "Download complete!";
     } catch (error) {
-        console.error('Error downloading cartoon:', error);
-        throw new Error('Failed to download cartoon.');
+        console.log('Error downloading cartoon:', error);
+        reply('Failed to download cartoon.');
     }
 }
