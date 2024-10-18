@@ -25,15 +25,15 @@ cmd({
             const downloadUrl = cartoonData.url;  // Adjust based on API response structure
 
             // Provide a message or reaction indicating the cartoon was found
-            message.reply(`Found cartoon: ${cartoonTitle}. Starting download...`);
+            reply(`Found cartoon: ${cartoonTitle}. Starting download...`);
 
             // Download cartoon (replace with actual download logic)
             await downloadCartoon(downloadUrl);
 
             // Send success reaction/message
-            message.react("✅");
+            react("✅");
         } else {
-            message.reply("No cartoons found for the query.");
+            reply("No cartoons found for the query.");
         }
     } catch (e) {
         console.log(e);
