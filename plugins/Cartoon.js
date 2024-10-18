@@ -1,6 +1,7 @@
 //====CARTOON DL CMD====
 
 const axios = require('axios');
+const {cmd , commands} = require('../command')
 
 // Define the command
 cmd({
