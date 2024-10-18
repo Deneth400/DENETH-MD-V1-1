@@ -38,7 +38,7 @@ ${menu.news}
 •GROUP MENU🤝
 ${menu.group}
 •AI MENU🖤
-${menu.group}
+${menu.ai}
 •OWNER MENU⚒
 ${menu.owner}
 •CONVERT MENU🔄
