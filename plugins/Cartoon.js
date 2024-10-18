@@ -5,12 +5,12 @@ const {cmd , commands} = require('../command')
 
 // Define the command
 cmd({
-    pattern: "cartoonDL",
+    pattern: "cartoon",
     react: "📥",
     alias: ["cartoonDownload", "cartoonSearch"],
     desc: "Search and download cartoons",
     category: "entertainment",
-    use: '.cartoonDL <cartoon_name>',
+    use: '.cartoon <cartoon_name>',
     filename: __filename
 }, async (message, match) => {
     const query = match[1] || 'ben10';  // Use provided query or fallback to 'ben10'
