@@ -33,7 +33,7 @@ cmd({
             // Send success reaction/message
             react("✅");
         } else {
-            reply("No cartoons found for the query.");
+            reply(`No cartoons found for the query.`);
         }
     } catch (e) {
         console.log(e);
