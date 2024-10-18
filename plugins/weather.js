@@ -33,7 +33,7 @@ async (conn, mek, m, { from, q, reply }) => {
 💨 *Wind Speed*: ${data.wind.speed} m/s
 🔽 *Pressure*: ${data.main.pressure} hPa
 
-Powered by OpenWeatherMap 🌦️
+> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴇɴᴇᴛʜ-ᴍᴅ ᴡʜᴀᴛꜱᴀᴘᴘ ʙᴏᴛ®
 `;
 
         return reply(weather);
