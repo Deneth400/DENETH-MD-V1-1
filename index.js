@@ -84,7 +84,7 @@ let up = `*DENETH_MD WA_BOT CONECTED SUCESSFULL ✅*
 
 > ​🇵​​🇴​​🇼​​🇪​​🇷​​🇪​​🇩​ ​🇧​​🇾​ ​🇩​​🇪​​🇳​​🇪​​🇹​​🇭​-​🇲​​🇩​`;
 
-conn.sendMessage(ownerNumber + "@s.whatsapp.net", { image: { url: `https://github.com/denethhansaka/DENETH-MD-Files/blob/main/Images/I%20am%20Connected.jpg?raw=true` }, caption: up })
+conn.sendMessage(ownerNumber + "@s.whatsapp.net", { image: { url: `https://github.com/denethhansaka/DENETH-MD-Files/blob/main/Images/CONNECTED_IMG.jpg?raw=true` }, caption: up })
 
 }
 })
