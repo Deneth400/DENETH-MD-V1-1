@@ -49,7 +49,7 @@ ${menu.search}
 > ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴇɴᴇᴛʜ-ᴍᴅ
 `
 
-await conn.sendMessage(from,{image:{url:"https://github.com/denethhansaka/DENETH-MD-Files/blob/main/Images/Menu%20Command.jpg?raw=true"},caption:madeMenu},{quoted:mek})//kemathinam IMG URL ekata alive image eka danna URL EKA THIYENA THENA MEKA TYPE KARANNA ᴄᴏɴꜰɪɢ.ᴀʟɪᴠᴇ_ɪᴍᴀɢᴇ
+await conn.sendMessage(from,{image:{url:"https://github.com/denethhansaka/DENETH-MD-Files/blob/main/Images/MENU_IMG.jpg?raw=true"},caption:madeMenu},{quoted:mek})//kemathinam IMG URL ekata alive image eka danna URL EKA THIYENA THENA MEKA TYPE KARANNA ᴄᴏɴꜰɪɢ.ᴀʟɪᴠᴇ_ɪᴍᴀɢᴇ
   
 }catch(e){
 console.log(e)
