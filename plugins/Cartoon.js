@@ -1,7 +1,7 @@
 //====CARTOON DL CMD====
 
 const axios = require('axios');
-const {cmd , commands} = require('../command')
+const {cmd , commands} = require('../command');
 
 // Define the command
 cmd({
@@ -9,12 +9,12 @@ cmd({
     react: "📥",
     alias: ["cartoonDownload", "cartoonSearch"],
     desc: "Search and download cartoons",
-    category: "entertainment",
+    category: "download",
     use: '.cartoon <cartoon_name>',
     filename: __filename
 }, async (message, match) => {
     const query = match[1] || 'ben10';  // Use provided query or fallback to 'ben10'
-    const url = `https://dark-yasiya-api-new.vercel.app/search/ginisisila?text=${query}&page=1;`
+    const url = https://dark-yasiya-api-new.vercel.app/search/ginisisila?text=${query}&page=1;
 
     try {
         // Search for cartoons using the API
@@ -25,7 +25,7 @@ cmd({
             const downloadUrl = cartoonData.url;  // Adjust based on API response structure
 
             // Provide a message or reaction indicating the cartoon was found
-            reply(`Found cartoon: ${cartoonTitle}. Starting download...`);
+            message.reply(Found cartoon: ${cartoonTitle}. Starting download...);
 
             // Download cartoon (replace with actual download logic)
             await downloadCartoon(downloadUrl);
@@ -33,22 +33,22 @@ cmd({
             // Send success reaction/message
             message.react("✅");
         } else {
-            reply("No cartoons found for the query.");
+            message.reply("No cartoons found for the query.");
         }
     } catch (error) {
-        console.log('Error fetching cartoons:', error);
-        reply('An error occurred while fetching cartoons.');
+        console.error('Error fetching cartoons:', error);
+        message.reply('An error occurred while fetching cartoons.');
     }
 });
 
 // Placeholder function for downloading cartoon
 async function downloadCartoon(url) {
     try {
-        console.log(`Downloading cartoon from: ${url}`);
+        console.log(Downloading cartoon from: ${url});
         // Add actual download logic here
         return "Download complete!";
     } catch (error) {
-        console.log('Error downloading cartoon:', error);
-        reply('Failed to download cartoon.');
+        console.error('Error downloading cartoon:', error);
+        throw new Error('Failed to download cartoon.');
     }
 }
