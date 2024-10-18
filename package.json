@@ -27,7 +27,13 @@
     "api-dylux":"1.8.5",
     "mongoose":"8.7.1",
     "secktor-pack": "latest",
-    "ytdl-secktor": "latest"
+    "ytdl-secktor": "latest",
+    "google-tts-api": "^2.0.2",
+                       
+     },
+     "directories": {
+     "lib": "lib",
+     "assets": "lib/assets"
 
   }
 }
