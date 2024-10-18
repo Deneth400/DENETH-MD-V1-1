@@ -25,6 +25,7 @@ cmd(
       pattern: "rmbg",
       alias: ["removebg"],
       desc: "Removes the background from an image.",
+      react: "❤",
       category: "ai",
       filename: __filename,
       use: "<image URL>",
