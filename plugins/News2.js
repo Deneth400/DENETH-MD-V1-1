@@ -13,7 +13,7 @@ const apilink = 'https://dark-yasiya-news-apis.vercel.app/api' // API LINK ( DO 
 cmd({
     pattern: "lankadeepanews",
     alias: ["lankadeepa","news4"],
-    react: "🕵️‍♂️",
+    react: "📰",
     desc: "",
     category: "news",
     use: '.lankadeepanews',
@@ -25,8 +25,7 @@ try{
 const news = await fetchJson(`${apilink}/lankadeepa`)
   
 const msg = `
-           🕵️‍♂️ DENETH-MD LANKADEEPA NEWS 🕵️‍♂️
-
+*LANKADEEPA NEWS DENETH-MD*
        
 * Title - ${news.result.title}
 
@@ -36,7 +35,7 @@ const msg = `
 
 * Link - ${news.result.url}
 
-> POWERED BY DENETH-MD`
+> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴇɴᴇᴛʜ-ᴍᴅ ᴡᴀ-ʙᴏᴛ`
 
 
 await conn.sendMessage( from, { image: { url: news.result.image || '' }, caption: msg }, { quoted: mek })
@@ -51,7 +50,7 @@ reply(e)
 cmd({
     pattern: "bbcnews",
     alias: ["bbc","news5"],
-    react: "⛩",
+    react: "🌍",
     desc: "",
     category: "news",
     use: '.bbcnews',
@@ -63,15 +62,16 @@ try{
 const news = await fetchJson(`${apilink}/bbc`)
   
 const msg = `
-           ⛩ BBC NEWS ⛩
+*BBC NEWS DENTH-MD*
 
        
 * Title - ${news.result.title}
 
 * News - ${news.result.desc}
 
-* Link - ${news.result.url} `
+* Link - ${news.result.url} 
 
+> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴇɴᴇᴛʜ-ᴍᴅ ᴡᴀ-ʙᴏᴛ`
 
 await conn.sendMessage( from, { image: { url: news.result.image || '' }, caption: msg }, { quoted: mek })
 } catch (e) {
@@ -80,11 +80,11 @@ reply(e)
 }
 })
 
-//===============hiru========================
+// ================================HIRU NEWS========================================
 cmd({
     pattern: "hirunews",
     alias: ["hiru","news1"],
-    react: "⭐",
+    react: "☀",
     desc: "",
     category: "news",
     use: '.hirunews',
@@ -96,15 +96,16 @@ try{
 const news = await fetchJson(`${apilink}/hiru`)
   
 const msg = `
-           ⭐ *HIRU NEWS DENETH-MD* ⭐
+*HIRU NEWS DENETH-MD*
 
        
 • *Title* - ${news.result.title}
 
 • *News* - ${news.result.desc}
 
-• *Link* - ${news.result.url}`
+• *Link* - ${news.result.url}
 
+> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴇɴᴇᴛʜ-ᴍᴅ ᴡᴀ-ʙᴏᴛ`
 
 await conn.sendMessage( from, { image: { url: news.result.image || '' }, caption: msg }, { quoted: mek })
 } catch (e) {
@@ -130,15 +131,15 @@ try{
 const news = await fetchJson(`${apilink}/sirasa`)
   
 const msg = `
-           🔺 *SIRASA NEWS DENETH-MD* 🔺
-
-       
+*SIRASA NEWS DENETH-MD*
+ 
 • *Title* - ${news.result.title}
 
 • *News* - ${news.result.desc}
 
-• *Link* - ${news.result.url} `
+• *Link* - ${news.result.url}
 
+> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴇɴᴇᴛʜ-ᴍᴅ ᴡᴀ-ʙᴏᴛ`
 
 await conn.sendMessage( from, { image: { url: news.result.image || '' }, caption: msg }, { quoted: mek })
 } catch (e) {
@@ -152,7 +153,7 @@ reply(e)
 cmd({
     pattern: "derananews",
     alias: ["derana","news3"],
-    react: "📑",
+    react: "🟥",
     desc: "",
     category: "news",
     use: '.derana',
@@ -164,8 +165,7 @@ try{
 const news = await fetchJson(`${apilink}/derana`)
   
 const msg = `
-           📑 *DERANA NEWS DENETH-MD* 📑
-
+*DERANA NEWS DENETH-MD*
        
 • *Title* - ${news.result.title}
 
@@ -173,8 +173,9 @@ const msg = `
 
 • *Date* - ${news.result.date}
 
-• *Link* - ${news.result.url} `
+• *Link* - ${news.result.url} 
 
+> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴇɴᴇᴛʜ-ᴍᴅ ᴡᴀ-ʙᴏᴛ`
 
 await conn.sendMessage( from, { image: { url: news.result.image || '' }, caption: msg }, { quoted: mek })
 } catch (e) {
