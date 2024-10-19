@@ -16,7 +16,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
             return reply("📽️ Please provide the name of the movie.");
         }
         
-        const apiUrl = `http://www.omdbapi.com/?i=tt3896198&apikey=37033827&t=${text}&plot=full}`;
+        const apiUrl = `http://www.omdbapi.com/apikey=37033827&t=${text}&plot=full}`;
         const response = await axios.get(apiUrl);
 
         const data = response.data;
