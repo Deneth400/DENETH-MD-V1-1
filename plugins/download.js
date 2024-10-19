@@ -11,58 +11,27 @@ let baseUrl;
     let baseUrlGet = await fetchJson(`https://raw.githubusercontent.com/prabathLK/PUBLIC-URL-HOST-DB/main/public/url.json`)
     baseUrl = baseUrlGet.api
 })();
-
-//mediafire
+//mediafire dl
 cmd({
-            name: "mediafire",
-            react: "📑",
-            need: "url",
-            category: "download",
-            desc: "Download files from www.mediafire.com",
-            filename: __filename
-     },
-     async (anyaV2, pika, { args, prefix, command }) => {
-        if (args.length < 1) return pika.reply(`*${Config.themeemoji}Example:* ${prefix + command} https://www.mediafire.com/file/5mt5qtr7nv4igt7/TmWhatsApp_v2.1_-_Stock.apk/file`);
-        if (!/www.mediafire.com/.test(args.join(" "))) return pika.reply("_❎ Invalid Url_");
-        const {key} = await pika.keyMsg(Config.message.wait);
-        mediafiredl(args[0])
-        .then(async res=> {
-            const uploadDate = formatDate(res.aploud);
-            await anyaV2.sendMessage(pika.chat, {
-                    document: { url: res.url },
-                    caption: `
-❒   ✦ 𝙈𝙀𝘿𝙄𝘼𝙁𝙄𝙍𝙀 ✦   ❒
+    pattern: "mediafire",
+    alias: ["mfire"],
+    desc: "download mfire files",
+    category: "download",
+    filename: __filename
+},
+async(conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
+    try {
+        if (!q && !q.startsWith("https://")) return reply("give me mediafire url")
+        //fetch data from api  
+        let data = await fetchJson(`https://api.maher-zubair.xyz/downloader/media-fire?apikey=a816a62ac39f3d1b52&url=https://www.mediafire.com/file/ybzegln4u8l1a3n/Pixellab_fonts_by_Maher_Zubair.rar/file/api/mediafiredl?url=${q}`)
+        reply("*🧚Downloading...*")
+        await conn.sendMessage(from, { document: { url: data.data.link_1 }, fileName: data.data.name, mimetype: data.data.file_type, caption: cap }, { quoted: mek })                                                                                                                 
+    } catch (e) {
+        console.log(e)
+        reply(`${e}`)
+    }
+})
 
-▢ *Name:* ${res.filename}
-▢ *Type:* ${res.filetype}
-▢ *Extension:* ${res.ext}
-▢ *Size:* ${res.filesize}
-▢ *Uploaded On:* ${uploadDate.date} _at_ ${uploadDate.time}
-
-> ${Config.footer}
-`.trim(),
-                    fileName: res.filename,
-                    mimetype: res.filetype,
-                    contextInfo: {
-                        externalAdReply: {
-                            title: "𝗠𝗘𝗗𝗜𝗔𝗙𝗜𝗥𝗘 𝗗𝗟 𝗘𝗡𝗚𝗜𝗡𝗘",
-                            body: "Owner: " + Config.ownername,
-                           // thumbnail: await getBuffer(""),
-                            showAdAttribution: false,
-                            thumbnailUrl: "https://i.ibb.co/wz43WhM/41-Sk-Snee-W-L.png",
-                            mediaType: 1,
-                            renderLargerThumbnail: true
-                        }
-                    }
-            }, {quoted:pika})
-            .then(()=> pika.deleteMsg(key));
-        })
-        .catch(err=> {
-            console.error(err);
-            pika.edit("ERROR: " + err.message, key);
-        });
-     }
-)
 //fb downloader
 cmd({
     pattern: "fb",
