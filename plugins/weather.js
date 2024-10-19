@@ -37,6 +37,7 @@ async (conn, mek, m, { from, q, reply }) => {
 `;
 
         return reply(weather);
+        await conn.sendMessage(from,{ image: { url: `https://github.com/denethhansaka/DENETH-MD-Files/blob/main/Images/WEATHER_IMG.jpg?raw=true` }, caption: `weather` }, { quoted: message });
     } catch (e) {
         console.log(e);
         if (e.response && e.response.status === 404) {
