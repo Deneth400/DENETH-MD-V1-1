@@ -16,7 +16,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
             return reply("📽️ Please provide the name of the movie.");
         }
 
-        const apiUrl = `https://www.omdbapi.com/?i=tt3896198&apikey=a6ad5056&t=${match[1]}&plot=full}`;
+        const apiUrl = `{https://www.omdbapi.com/?i=tt3896198&apikey=a6ad5056&t=${match[1]}&plot=full}`;
         const response = await axios.get(apiUrl);
 
         const data = response.data;
@@ -50,7 +50,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
         // Send the movie information along with the poster image
         await conn.sendMessage(from, {
             image: { url: imageUrl },
-            caption: `${movieInfo}\n> BHASHI-MD`
+            caption: `${movieInfo}\n> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴇɴᴇᴛʜ-ᴍᴅ ᴡʜᴀᴛꜱᴀᴘᴘ ʙᴏᴛ®`
         }, { quoted: mek });
     } catch (e) {
         console.log(e);
