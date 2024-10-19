@@ -30,7 +30,7 @@ async (conn, mek, m, { from, q, reply }) => {
 
 > ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴇɴᴇᴛʜ-ᴍᴅ ᴡʜᴀᴛꜱᴀᴘᴘ ʙᴏᴛ®`;
 
-        return reply(translationMessage);
+        await conn.sendMessage(from,{ image: { url: `https://github.com/denethhansaka/DENETH-MD-Files/blob/main/Images/TRANSLATOR_IMG.jpg?raw=true` }, caption: translationMessage }, { quoted: mek })
     } catch (e) {
         console.log(e);
         return reply("⚠️ An error occurred while translating the text. Please try again later.");
