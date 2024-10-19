@@ -20,8 +20,8 @@ let status = `*DENETH-MD SYSTEM INFORMATION*
 👑 𝗢𝘄𝗻𝗲𝗿 : DENETH HANSAKA KEERTHIRATHNA
 
 > ​🇵​​🇴​​🇼​​🇪​​🇷​​🇪​​🇩​ ​🇧​​🇾​ ​🇩​​🇪​​🇳​​🇪​​🇹​​🇭​-​🇲​​🇩​‎`
-return await conn.sendMessage(from,{ image: { url: `https://github.com/denethhansaka/DENETH-MD-Files/blob/main/Images/system.jpg?raw=true` }, caption: status })
 
+return await conn.sendMessage(from,{ image: { url: `https://github.com/denethhansaka/DENETH-MD-Files/blob/main/Images/SYSTEM_IMG.jpg?raw=true` }, caption: status },{quoted: mek})
 }catch(e){
 console.log(e)
 reply(`${e}`)
