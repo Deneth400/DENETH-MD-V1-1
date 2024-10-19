@@ -25,7 +25,7 @@ async(conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, send
     try {
         if (!q && !q.startsWith("https://")) return reply("❗Apk Not Found,Sorry")
         //fetch data from api  
-        let data = await fetchJson(`${baseUrl}/api/apkdl?url=${q}`)
+        let data = await fetchJson(`https://api.maher-zubair.xyz/downloader/apk?apikey=a816a62ac39f3d1b52&q=${q}`)
         reply("*plase waite...*")
         await conn.sendMessage(from, { document: { url: data.data.link_1 }, fileName: data.data.name, mimetype: data.data.file_type, caption: cap }, { quoted: mek })                                                                                                                 
     } catch (e) {
