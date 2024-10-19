@@ -24,8 +24,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
             return reply("🚫 Movie not found.");
         }
 
-        const movieInfo = `
-🎬 *Movie Information* 🎬
+        const movieInfo = `🎬 *DENETH-MD MOVIE INFORMATION* 🎬
 
 🎥 *Title:* ${data.Title}
 📅 *Year:* ${data.Year}
@@ -50,7 +49,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
         // Send the movie information along with the poster image
         await conn.sendMessage(from, {
             image: { url: imageUrl },
-            caption: `${movieInfo}\n> `
+            caption: `${movieInfo}\n> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴇɴᴇᴛʜ-ᴍᴅ ᴡʜᴀᴛꜱᴀᴘᴘ ʙᴏᴛ®`
         }, { quoted: mek });
     } catch (e) {
         console.log(e);
