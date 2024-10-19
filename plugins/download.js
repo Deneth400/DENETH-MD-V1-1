@@ -1,6 +1,6 @@
-const { fetchJson } = require('../lib/functions');
-const config = require('../config');
-const { cmd } = require('../command');
+const { fetchJson } = require('../lib/functions')
+const config = require('../config')
+const { cmd } = require('../command')
 
 // Fetch Base API URL
 let baseUrl;
