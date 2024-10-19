@@ -5,18 +5,18 @@ const config = require('../config'); // Ensure your API key is in config
 cmd({
     pattern: "movie",
     desc: "Fetch detailed information about a movie.",
-    category: "search",
+    category: "utility",
     react: "🎬",
     filename: __filename
 },
 async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
     try {
         const movieName = args.join(' ');
-        if text {
+        if (!movieName) {
             return reply("📽️ Please provide the name of the movie.");
         }
-        
-        const apiUrl = `http://www.omdbapi.com/apikey=37033827&t=${text}&plot=full}`;
+
+        const apiUrl = `http://www.omdbapi.com/?i=tt3896198&apikey=37033827&t=${movieName}&plot=full}`;
         const response = await axios.get(apiUrl);
 
         const data = response.data;
@@ -50,10 +50,11 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
         // Send the movie information along with the poster image
         await conn.sendMessage(from, {
             image: { url: imageUrl },
-            caption: `${movieInfo}\n> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴇɴᴇᴛʜ-ᴍᴅ ᴡʜᴀᴛꜱᴀᴘᴘ ʙᴏᴛ®`
+            caption: `${movieInfo}\n> BHASHI-MD`
         }, { quoted: mek });
     } catch (e) {
         console.log(e);
         reply(`❌ Error: ${e.message}`);
     }
 });
+
