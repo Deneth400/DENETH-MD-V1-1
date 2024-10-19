@@ -19,7 +19,7 @@ let status = `*DENETH-MD SYSTEM INFORMATION*
 ⚙️ 𝗛𝗼𝘀𝘁 : ${os.hostname()}
 👑 𝗢𝘄𝗻𝗲𝗿 : DENETH HANSAKA KEERTHIRATHNA
 
-> ​🇵​​🇴​​🇼​​🇪​​🇷​​🇪​​🇩​ ​🇧​​🇾​ ​🇩​​🇪​​🇳​​🇪​​🇹​​🇭​-​🇲​​🇩​‎`
+> ​> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴇɴᴇᴛʜ-ᴍᴅ ᴡʜᴀᴛꜱᴀᴘᴘ ʙᴏᴛ®​‎`
 
 return await conn.sendMessage(from,{ image: { url: `https://github.com/denethhansaka/DENETH-MD-Files/blob/main/Images/SYSTEM_IMG.jpg?raw=true` }, caption: status },{quoted: mek})
 }catch(e){
