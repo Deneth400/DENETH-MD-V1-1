@@ -15,7 +15,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
         const response = await axios.get(apiUrl, { headers: { Authorization: config.PEXELS_API_KEY } });
         const data = response.data.photos[0];
 
-        await conn.sendMessage(from, { image: { url: data.src.original }, caption: '🖼️ *Random Wallpaper Image* 🖼️\n> DENETH-MD' }, { quoted: mek });
+        await conn.sendMessage(from, { image: { url: data.src.original }, caption: '🖼️ *Random Wallpaper Image* 🖼️\n> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴇɴᴇᴛʜ-ᴍᴅ ᴡʜᴀᴛꜱᴀᴘᴘ ʙᴏᴛ®' }, { quoted: mek });
     } catch (e) {
         console.log(e);
         reply(`Error fetching wallpaper image: ${e.message}`);
