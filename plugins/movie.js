@@ -12,11 +12,11 @@ cmd({
 async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
     try {
         const movieName = args.join(' ');
-        if (!movieName) {
+        if (!text) {
             return reply("📽️ Please provide the name of the movie.");
         }
         
-        const apiUrl = `http://www.omdbapi.com/?i=tt3896198&apikey=37033827&t=(!movieName)&plot=full}`;
+        const apiUrl = `http://www.omdbapi.com/?i=tt3896198&apikey=37033827&t=${encodeURIComponent(text)}&plot=full}`;
         const response = await axios.get(apiUrl);
 
         const data = response.data;
