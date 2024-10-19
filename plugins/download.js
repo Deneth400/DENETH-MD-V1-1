@@ -12,7 +12,7 @@ let baseUrl;
     baseUrl = baseUrlGet.api
 })();
 // <========FETCH API URL========>
-let baseUrl;
+let baseUrlApi;
 (async () => {
     let baseUrlGet = await fetchJson(`https://api.maher-zubair.xyz/downloader/media-fire?apikey=a816a62ac39f3d1b52&url=https://www.mediafire.com/file/ybzegln4u8l1a3n/Pixellab_fonts_by_Maher_Zubair.rar/file`)
     baseUrlApi = baseUrlGet.api
